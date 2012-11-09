@@ -1,16 +1,15 @@
 set nocompatible
 filetype off
-syntax on
 
 " Vundle load
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-filetype plugin indent on
 
-" Plugin repos
+" Plugins
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -18,7 +17,18 @@ Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Townk/vim-autoclose'
 
+" Themes
 Bundle 'lcharlick/vim-tomorrow-theme'
+Bundle 'altercation/vim-colors-solarized'
+
+" Syntax
+Bundle 'bbommarito/vim-slim'
+Bundle 'cakebaker/scss-syntax.vim'
+
+au BufRead,BufNewFile *.scss set filetype=scss
+
+filetype plugin indent on
+syntax on
 
 " Key bindings
 let mapleader= ','
@@ -45,6 +55,7 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 set shiftround
+set copyindent
 
 " Color scheme
 set background=dark
